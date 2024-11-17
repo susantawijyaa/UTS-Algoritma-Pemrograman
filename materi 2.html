@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materi style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&display=swap" rel="stylesheet">   
+    <title>UTS Algoritma Pemrograman</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="nav-container">
+        <div class="navbar-wrap">
+            <ul class="my-tittle">
+                <li class="first-tittle">UTS</li>
+                <li class="last-tittle">ALGORITMA PEMROGRAMAN</li>
+            </ul> 
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>  
+    <!-- navbar end -->
+
+    <section>
+        <!-- deskriptif -->
+        <div class="inti-materi-1">
+            <h2>Menentukan Bilangan Ganjil atau Genap</h2>
+            <ol>
+                <li>Mulai Program</li>
+                <li>Inisialisasi variabel yang dibutuhkan:
+                    <ul>
+                        <li>Variabel (<strong>bilangan</strong>) untuk menyimpan bilangan yang akan ditentukan ganjil atau genap.</li>
+                        <li>Variabel (<strong>input</strong>) untuk menampung input sementara dari pengguna.</li>
+                    </ul>
+                </li>
+                <li>Tampilkan header program:
+                    <ul>
+                        <li>Cetak garis pembatas menggunakan karakter "-".</li>
+                        <li>Cetak pesan "Selamat Datang di Program Penentu Bilangan Ganjil atau Genap".</li>
+                        <li>Cetak informasi pembuat program "Program ini dibuat oleh Susanta & Bintang".</li>
+                        <li>Cetak garis pembatas menggunakan karakter "-".</li>
+                    </ul>
+                </li>
+                <li>Tampilkan Instruksi:
+                    <ul>
+                        <li>Tampilkan instruksi cara memasukkan bilangan bulat yang akan ditentukan ganjil atau genap.</li>
+                        <li>Tampilkan contoh input yang benar.</li>
+                        <li>Tampilkan peringatan bahwa bilangan desimal, simbol, atau huruf tidak valid.</li>
+                    </ul>
+                </li>
+                <li>Perulangan sampai bertemu <strong>break</strong>:
+                    <ul>
+                        <li>Input sementara ke variabel (<strong>input</strong>).</li>
+                        <li>Baca input dari pengguna.</li>
+                    </ul>
+                </li>
+                <li>Kondisi Jika:
+                    <ul>
+                        <li>Jika (<strong>input</strong>) berhasil dikonversi ke (<strong>bilangan</strong>) dan tidak ada karakter sisa:
+                            <ul>
+                                <li>Tentukan apakah bilangan tersebut genap atau ganjil:</li>
+                                <li>Jika bilangan dibagi dua menghasilkan sisa nol, maka bilangan tersebut genap.</li>
+                                <li>Tampilkan hasil:
+                                    <ul>
+                                        <li>Cetak garis pembatas menggunakan karakter "-".</li>
+                                        <li>Tampilkan pesan bilangan tersebut adalah genap.</li>
+                                        <li>Cetak garis pembatas menggunakan karakter "-".</li>
+                                        <li>Tampilkan ucapan terima kasih.</li>
+                                        <li>Tampilkan informasi pembuat program.</li>
+                                        <li>Keluar dari perulangan.</li>
+                                    </ul>
+                                </li>
+                                <li>Jika bilangan dibagi dua menghasilkan sisa satu, maka bilangan tersebut ganjil.</li>
+                                <li>Tampilkan hasil:
+                                    <ul>
+                                        <li>Cetak garis pembatas menggunakan karakter "-".</li>
+                                        <li>Tampilkan pesan bilangan tersebut adalah ganjil.</li>
+                                        <li>Cetak garis pembatas menggunakan karakter "-".</li>
+                                        <li>Tampilkan ucapan terima kasih.</li>
+                                        <li>Tampilkan informasi pembuat program.</li>
+                                        <li>Keluar dari perulangan.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Jika input tidak valid:
+                            <ul>
+                                <li>Tampilkan pesan "Bilangan tidak valid!".</li>
+                                <li>Minta pengguna memasukkan ulang bilangan yang ingin ditentukan ganjil atau genap.</li>
+                                <li>Ulangi proses validasi sampai input benar.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Selesai Program</li>
+            </ol>
+        </div>
+        
+        
+        <!-- deskriptif end -->
+
+        <!-- flowchart -->
+        <div class="inti-materi-2">
+            <h2>Flowchart</h2>
+            <img src="ganjil genap gambar.jpg" class="flowchart-1">
+        </div>
+        <!-- flowchart end -->
+
+        <!-- implementasi code -->
+        <div class="inti-materi-3">
+            <div>
+                <h2>
+                    Implementasi Code
+                </h2>
+            </div>
+
+            <pre id="code-block">
+#include &lt;iostream&gt;     // Library untuk input output
+#include &lt;string&gt;     // Library untuk menggunakan tipe data string
+#include &lt;sstream&gt;    // Library untuk konversi dan validasi input menggunakan stringstream
+using namespace std;
+                    
+int main (){
+    // Deklarasi variabel yang dibutuhkan
+    unsigned long long int bil;        // Variabel untuk menyimpan bilangan yang akan dicek (tipe long int untuk angka besar)
+    string input;        // Variabel untuk menyimpan input dari user sebelum divalidasi
+                    
+    // Menampilkan header program dan informasi pembuat
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "---------------------------------------------------------\n";
+    cout &lt;&lt; "Selamat Datang di Program Penentu Bilangan Ganjil atau Genap ! \n" ;
+    cout &lt;&lt; "Program ini dibuat oleh Susanta & Bintang. \n";
+    cout &lt;&lt; "---------------------------------------------------------\n";
+    cout &lt;&lt; endl;
+                    
+    // Menampilkan instruksi penggunaan program
+    cout &lt;&lt; "Silahkan masukkan sebuah bilangan bulat yang akan di tentukan ganjil atau genap ! \n \n";
+    cout &lt;&lt; "Contoh \t \t: 25 \n";
+    cout &lt;&lt; "Note \t \t: bilangan desimal, simbol , atau huruf akan dianggap tidak valid ! \n";
+    cout &lt;&lt; "Bilangan \t: ";
+                    
+    // Memulai loop untuk validasi input
+    while (true){
+        getline (cin,input);         // Membaca input user sebagai string
+        stringstream x(input);       // Membuat objek stringstream untuk validasi
+                    
+        // Melakukan validasi input
+        // x >> bil : mengecek apakah input bisa dikonversi ke number
+        // x.eof()  : memastikan tidak ada karakter tambahan setelah angka
+        if(x >> bil && x.eof()) {
+            // Menggunakan operator modulo (%) untuk mengecek sisa bagi dengan 2
+            // Jika sisa bagi 0 maka genap, jika 1 maka ganjil
+            if (bil % 2 == 0){
+                // Output untuk bilangan genap
+                cout &lt;&lt; endl;
+                cout &lt;&lt; "---------------------------------------------------------\n";
+                cout &lt;&lt; bil &lt;&lt; " merupakan bilangan genap ! \n";
+                cout &lt;&lt; "---------------------------------------------------------\n";
+                cout &lt;&lt; endl;
+                cout &lt;&lt; "Terima kasih telah menggunakan program kami :) \n";
+                cout &lt;&lt; "Program ini dibuat oleh Susanta & Bintang."; 
+                    
+                break;    // Keluar dari loop karena input valid dan pengecekan selesai
+                    
+            }   else {
+                // Output untuk bilangan ganjil
+                cout &lt;&lt; endl;
+                cout &lt;&lt; "---------------------------------------------------------\n";
+                cout &lt;&lt; bil &lt;&lt; " merupakan bilangan ganjil ! \n";
+                cout &lt;&lt; "---------------------------------------------------------\n";
+                cout &lt;&lt; endl;
+                cout &lt;&lt; "Terima kasih telah menggunakan program kami :) \n";
+                cout &lt;&lt; "Program ini dibuat oleh Susanta & Bintang."; 
+                    
+                break;    // Keluar dari loop karena input valid dan pengecekan selesai
+            }
+                        
+            }   else {
+                // Jika input tidak valid, tampilkan pesan error
+                cout &lt;&lt; endl;
+                cout &lt;&lt; "Bilangan tidak valid ! \n";
+                cout &lt;&lt; "Harap masukkan ulang bilangan yang ingin ditentukan ganjil atau genap : ";
+            }
+        }
+                    
+        return 0;    // Mengakhiri program
+    }
+            </pre>
+
+            <button class="copy-btn" onclick="copyCode()">Salin Kode</button>
+            
+            <script src="copy code.js"></script>
+        </div>
+        <!-- implementasi code -->
+
+        <div class="inti-materi-4">
+            <div>
+                <h2>
+                    Contoh Output
+                </h2>
+                <p>---------------------------------------------------------</p>
+                <p>Selamat Datang di Program Penentu Bilangan Ganjil atau Genap !</p>
+                <p>Program ini dibuat oleh Susanta & Bintang.</p>
+                <p>---------------------------------------------------------</p>
+                <p>Silahkan masukkan sebuah bilangan bulat yang akan di tentukan ganjil atau genap !</p>
+                <p>Contoh          : 25</p>
+                <p>Note            : bilangan desimal, simbol , atau huruf akan dianggap tidak valid !</p>
+                <p>Bilangan        : 29</p>
+                <p>---------------------------------------------------------</p>
+                <p>29 merupakan bilangan ganjil !</p>
+                <p>---------------------------------------------------------</p>
+                <p>Terima kasih telah menggunakan program kami :)</p>
+                <p>Program ini dibuat oleh Susanta & Bintang.</p>
+            </div>
+        </div>
+        <div class="next-tbl">
+            <ul class="tombol-back">
+                <li><a href="materi 1.html">Sebelumnya</a></li>
+            </ul> 
+            <ul class="tombol-next">
+                <li><a href="materi 3.html">Selanjutnya</a></li>
+            </ul> 
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="copyright">
+        <div>
+            <p>&copy; 2024 Bintang Yodisa Suta & Gede Susanta Wijaya. All rights reserved.</p>
+        </div>
+    </footer> 
+    <!-- footer end -->
+</body>
+</html>
